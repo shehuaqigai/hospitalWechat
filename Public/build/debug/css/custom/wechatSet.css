@@ -8,3 +8,17 @@
 #wechatSet i.configUrl {
   color: red;
 }
+#wechatSet p input {
+  width: 300px;
+  font-weight: bold;
+}
+#wechatSet p.interfaceSet {
+  padding: 0px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid gray;
+  line-height: 30px;
+  margin-left: 200px;
+  cursor: pointer;
+}
