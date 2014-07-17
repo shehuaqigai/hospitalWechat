@@ -1,5 +1,5 @@
 (function(){
-//分类表中的一行
+    //分类表中的一行
     var Data=Backbone.Model.extend({});
     var collection=Backbone.Collection.extend({
         model:Data,

@@ -3,7 +3,7 @@
     var wechatSet=Backbone.View.extend({
         el:"#wechatSet",
         events:{
-
+            "click .interfaceSet":"oninterfaceSet"
         },
         template:ADMIN.tpl,//模板
         button:null,
@@ -26,16 +26,40 @@
         },
         //页面渲染
         interfaceSet:function(){
-            this.$el.prepend(this.template[this.button]());
             var url=document.location.href;
-                url=url.split("index.php",1)+'index.php?m=wechatapi&c=Index&a=index';
-            this.$el.find('p .configUrl').html(url);
+            url=url.split("index.php",1)+'index.php?m=wechatapi&c=Index&a=index';
+            var self=this;
+            $.ajax({
+                url:ADMIN.global.APPPATH+"Public/resource/config.json",
+                dataType:"json",
+                success:function(data){
+                    self.$el.prepend(self.template[self.button]({interfaceSet:data}));
+                    self.$el.find('p .configUrl').html(url);
+                },
+                error:function(data){
+                       console.log("获取配置信息出错");
+                }
+            });
+
         },
         indexPage:function(){},
         massSendMesg:function(){},
         mesgSet:function(){},
         fllowPush:function(){},
         sceneQRcode:function(){},
+        oninterfaceSet:function(e){
+        var data="{token:"+this.$el.find("p>input.token").val()+", appid:"+
+            this.$el.find("p>input.appid").val()+",appsecret:"+
+            this.$el.find("p>input.appsecret").val()+"}";
+            $.ajax({
+                url:ADMIN.global.ADMINPATH+"",
+                success:function(){},
+                error:function(){}
+            });
+
+            $.Zebra_Dialog('<strong>设置成功!</strong>',{type:"confirmation",title:"确认"});
+
+        },
         ajaxAction:function(data){
         },
         destroy:function(){
