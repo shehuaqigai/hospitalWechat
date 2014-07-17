@@ -48,16 +48,19 @@
         fllowPush:function(){},
         sceneQRcode:function(){},
         oninterfaceSet:function(e){
-        var data="{token:"+this.$el.find("p>input.token").val()+", appid:"+
-            this.$el.find("p>input.appid").val()+",appsecret:"+
-            this.$el.find("p>input.appsecret").val()+"}";
+        var dataJson='{"token":"'+this.$el.find("p>input.token").val()+'","appid":"'+
+            this.$el.find("p>input.appid").val()+'","appsecret":"'+
+            this.$el.find("p>input.appsecret").val()+'"}';
             $.ajax({
-                url:ADMIN.global.ADMINPATH+"",
-                success:function(){},
+                url:ADMIN.global.ADMINPATH+"wechatSet/interfaceSet",
+                data:{dataformat:dataJson},
+                success:function(data){
+                    console.log(data);
+                    $.Zebra_Dialog('<strong>设置成功!</strong>',{type:"confirmation",title:"确认"});
+                },
                 error:function(){}
             });
 
-            $.Zebra_Dialog('<strong>设置成功!</strong>',{type:"confirmation",title:"确认"});
 
         },
         ajaxAction:function(data){
