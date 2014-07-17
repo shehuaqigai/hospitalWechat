@@ -1,0 +1,11 @@
+#这里需要团队手动安装grunt依赖库
+Public/grunt/node_modules
+#临时文件不加入版本控制
+Wechat/Runtime
+#禁止mac下产生的的隐藏文件提交
+.DS_Store
+#composer第三方库和锁文件
+composer.lock
+#取消phpstorm的.idea
+.idea
+/vendor
