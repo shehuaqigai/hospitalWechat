@@ -2,6 +2,8 @@
 
 ADMIN["tpl"] = ADMIN["tpl"] || {};
 
+ADMIN["tpl"] ["customMenu"] = _.template('');
+
 ADMIN["tpl"] ["fllowPush"] = _.template('');
 
 ADMIN["tpl"] ["indexPage"] = _.template('');
