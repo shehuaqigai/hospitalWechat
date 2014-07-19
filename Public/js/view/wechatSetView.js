@@ -47,6 +47,7 @@
         mesgSet:function(){},
         fllowPush:function(){},
         sceneQRcode:function(){},
+        customMenu:function(){},
         oninterfaceSet:function(e){
         var dataJson='{"token":"'+this.$el.find("p>input.token").val()+'","appid":"'+
             this.$el.find("p>input.appid").val()+'","appsecret":"'+
