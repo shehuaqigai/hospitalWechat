@@ -83,7 +83,6 @@ module.exports = function(grunt){
                     "../build/debug/css/custom/admin.css":["../css/custom/admin.less"],
                     "../build/debug/css/custom/adminManage.css":["../css/custom/adminManage.less"],
                     "../build/debug/css/custom/commodityManage.css":["../css/custom/commodityManage.less"],
-                    "../build/debug/css/custom/customMenu.css":["../css/custom/customMenu.less"],
                     "../build/debug/css/custom/otherSetting.css":["../css/custom/otherSetting.less"],
                     "../build/debug/css/custom/tradeManage.css":["../css/custom/tradeManage.less"],
                     "../build/debug/css/custom/wechat.css":["../css/custom/wechat.less"],
