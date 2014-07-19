@@ -2,7 +2,7 @@
 
 ADMIN["tpl"] = ADMIN["tpl"] || {};
 
-ADMIN["tpl"] ["customMenu"] = _.template('');
+ADMIN["tpl"] ["customMenu"] = _.template('<div class="ws_customMenu"><p class="warming">注意:这里的自定义菜单操作不要修改,除非你知道自己在做什么,改动菜单后对应的事件回复处理和对应的链接页面都要重新开发,如果需要改变菜单请联系开发商!</p></div>');
 
 ADMIN["tpl"] ["fllowPush"] = _.template('');
 
