@@ -3,28 +3,32 @@
     var wechatSet=Backbone.View.extend({
         el:"#wechatSet",
         events:{
-            "click .interfaceSet":"oninterfaceSet"
+            "click .interfaceSet":"oninterfaceSet"//微信配置信息设置按钮事件
         },
         template:ADMIN.tpl,//模板
-        button:null,
-        modelData:null,
-        //初始化应用
+        button:null,//子按钮
+        modelData:null,//微信设置模型数据
+
+        //初始化微信设置模块页面
         initialize:function(initData){
             //初始化微信设置的数据
             this.modelData=initData.collection;
             //传入和渲染微信设置下面的子按钮
             this.init(initData.item);
         },
+
         init:function(button){
             this.$el.empty();
             this.button=button;
-            this.renderSwitch(button);
-
+            this.renderDispatcher(button);
         },
-        renderSwitch:function(button){
+
+        //微信设置模块子按钮渲染委派
+        renderDispatcher:function(button){
                 this[button]();
         },
-        //页面渲染
+
+        //微信配置UI页面渲染
         interfaceSet:function(){
             var url=document.location.href;
             url=url.split("index.php",1)+'index.php?m=wechatapi&c=Index&a=index';
@@ -47,7 +51,11 @@
         mesgSet:function(){},
         fllowPush:function(){},
         sceneQRcode:function(){},
+
+        //自定义事件UI页面渲染
         customMenu:function(){},
+
+        //微信基本信息设置按钮事件
         oninterfaceSet:function(e){
         var dataJson='{"token":"'+this.$el.find("p>input.token").val()+'","appid":"'+
             this.$el.find("p>input.appid").val()+'","appsecret":"'+
@@ -64,6 +72,8 @@
 
         },
         ajaxAction:function(data){
+
+
         },
         destroy:function(){
             this.remove();
