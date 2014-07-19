@@ -11,14 +11,11 @@
             'wechatSet/:mesgSet':'wechatSet',
             'wechatSet/:fllowPush':'wechatSet',
             'wechatSet/:sceneQRcode':'wechatSet',
+            'wechatSet/:customMenu':'wechatSet',
              //微信用户管理控制路由
             'wechatUserManage/:groupManage':'wechatUserManage',
             'wechatUserManage/:userProfile':'wechatUserManage',
             'wechatUserManage/:fllowList':'wechatUserManage',
-            //自定义菜单控制路由
-            'customMenu/:createMenu' : 'customMenu',
-            'customMenu/:selectMenu' : 'customMenu',
-            'customMenu/:deleteMenu' : 'customMenu',
             //商品管理控制路由
             'commodityManage/:productManage' : 'commodityManage',
             'commodityManage/:productCategory' : 'commodityManage',
@@ -79,14 +76,6 @@
          */
         wechatUserManage:function(item){
             this.jumpViewAction('wechatUserManage',item);
-
-        },
-        /**
-         * 自定义菜单设置功能对象
-         * @param item
-         */
-        customMenu:function(item){
-            this.jumpViewAction('customMenu',item);
 
         },
         /**
