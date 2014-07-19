@@ -53,7 +53,14 @@
         sceneQRcode:function(){},
 
         //自定义事件UI页面渲染
-        customMenu:function(){},
+        customMenu:function(){
+
+            var customMenuUI = this.template[this.button]();
+            this.$el.append(customMenuUI);
+
+
+
+        },
 
         //微信基本信息设置按钮事件
         oninterfaceSet:function(e){
