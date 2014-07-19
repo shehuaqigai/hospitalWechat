@@ -138,35 +138,64 @@ module.exports = function(grunt){
         jshint:{
             options:{
             curly: true,//作用：值为true时，不能省略循环和条件语句后的大括号.
+
             eqeqeq: false,//对于简单类型，使用===和!==，而不是==和!=
+
             //undef:true,// 查找所有未定义变量
+
             eqnull: true,//作用：值为false时，如果代码中使用"=="来比较变量与null，则JSHint会给出警告；值为true时，则不会.
+
             asi:false,//作用：值为false时，如果代码末尾省略了分号，则JSHint会给出警告；值为true时，则不会.
+
             boss:false,//作用：值为false时，如果预期为条件表达式的地方使用了赋值表达式，则JSHint会给出警告；值为true时，则不会.
+
             bitwise:true,//作用：值为true时，禁止使用位操作符，如"^，|，&"等.
+
            // camelcase:true,//作用：值为true时，变量名必须使用驼峰风格（如"loginStatus"）或UPPER_CASE风格（如"LOGIN_STATUS"）.
+
             indent:4,//作用：该选项要求你的代码必须使用指定的tab缩进宽度，如"indent:4"
+
           //  latedef:true,//作用：值为true时，禁止在变量定义之前使用它.
+
             newcap:true,//作用：值为true时，构造函数名需要大写.
+
             noarg:true,//作用：值为true时，禁止使用arguments.caller与arguments.callee.
+
            // noempty:true,//作用：值为true时，不允许代码中出现空的语句块（"{}"）
+
            // nonew:true,//作用：值为true时，禁止使用产生副作用的构造器调用方式，如"new MyConstructor();"
+
            plusplus:false,//作用：值为true时，禁止使用一元递增（"++"）和递减（"--"）运算符.
+
           // quotmark:true,//作用：该选项用于统一代码中的引号风格，可选的值有三个：(1) single -- 只能使用单引号；(2) double -- 只能使用双引号；(3) true -- 两者任选其一，但不能同时出现.
+
             strict:false,//作用：值为true时，该选项会要求所有函数在ECMAScript 5的严格模式中运行.
+
             maxparams:5,//作用：该选项用于设置每个函数形参数量的上限，如"maxparams:3".
+
             maxdepth:3,//作用：该选项用于设置每个函数中代码块嵌套层级的上限，如"maxdepth:1".
+
             debug:false,//作用：值为false时，如果代码中有debugger语句，则JSHint会给出警告；值为true时，则不会.
+
             esnext:false,//作用：值为true时，JSHint会使用ECMAScript 6的语法来校验你的代码.
+
             evil:false,//作用：值为false时，不允许在代码中使用eval.
+
             funcscope:false,//作用：值为false时，如果在控制语句中定义了变量，却在控制语句之外使用变量，则JSHint会给出警告.
+
             globalstrict:false,//作用：值为false时，不允许使用全局级别的严格模式.
+
             loopfunc:false,//作用：值为true时，允许在循环中定义函数；值为false时，会给出警告
+
             moz:true,//作用：该选项告诉JSHint，你的代码中使用了Mozilla JavaScript扩展.
+
             multistr:true,//作用：值为true时，允许多行字符串；值为false时，则会给出警告.
+
             proto:false,//作用：值为true时，允许在代码中使用__proto__属性；值为false时，则会给出警告.
+
             scripturl:false,//作用：值为true时，允许在代码中使用"javascript:..."这样的url；值为false时，则会给出警告.
-            sub:false,//作用：值为true时，允许用obj['name']和obj.name两种方式访问对象的属性；值为false时，不允许使用obj['name']方式，除非只能使用这种方式访问.
+
+            sub:true,//作用：值为true时，允许用obj['name']和obj.name两种方式访问对象的属性；值为false时，不允许使用obj['name']方式，除非只能使用这种方式访问.
             globals: {
                 jQuery: true,
                 Backbone:true
@@ -225,9 +254,6 @@ module.exports = function(grunt){
             adminManage: {
                 src: ["../js/template/adminManage/*.html"]
             },
-            customMenu: {
-                src:["../js/template/customMenu/*.html"]
-            },
             otherSetting: {
                 src: ["../js/template/otherSetting/*.html"]
             },
@@ -269,10 +295,6 @@ module.exports = function(grunt){
             htmltjs_adminManage: {
                 files: ["../js/template/adminManage/*.html"],
                 tasks:['htmltjs:adminManage']
-            },
-            htmltjs_customMenu: {
-                files:["../js/template/customMenu/*.html"],
-                tasks:['htmltjs:customMenu']
             },
             htmltjs_otherSetting: {
                 files: ["../js/template/otherSetting/*.html"],
@@ -329,11 +351,6 @@ module.exports = function(grunt){
             adminManage: {
                 files: {
                     "../js/template/adminManage/adminManage.tpl.js": ["../js/template/adminManage/*.html"]
-                }
-            },
-            customMenu: {
-                files: {
-                    "../js/template/customMenu/customMenu.tpl.js": ["../js/template/customMenu/*.html"]
                 }
             },
             otherSetting: {
