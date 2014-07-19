@@ -6,11 +6,11 @@ class WechatSetController extends Controller {
 
    public function interfaceSet(){
 
-     $data=I("get.dataformat");
-       echo json_encode($data);
-     //  $fh = fopen("./Public/resource/config.json", "w");
-      // fwrite($fh, $data);
-     //  fclose($fh);
+       $data=I("get.dataformat");
+       $str_json=str_replace("&quot;",'"',$data);
+       $fh = fopen("./Public/resource/config.json", "w");
+       fwrite($fh, $str_json);
+       fclose($fh);
 
     }
 
