@@ -14,10 +14,13 @@ class IndexController extends Controller {
          * 由于涉及到请求还需要开启curl扩展
          * 使用到回调函数，需要php5.3以上版本
          */
+
+        $config=$this->getConfigMessage();
+
         $options = array(
-            'token'=>'weixinEcshop', //填写你设定的key(这里写的是测试号)
-            'appid'=>'wxdd108acd984a2fe1', //填写高级调用功能的app id, 请在微信开发模式后台查询(这里写的是测试号)
-            'appsecret'=>'e8206cbe90c67555609fa57f633f8c78', //填写高级调用功能的密钥(这里写的是测试号)
+            'token'=>$config['token'], //填写你设定的key(这里写的是测试号)
+            'appid'=>$config['appid'], //填写高级调用功能的app id, 请在微信开发模式后台查询(这里写的是测试号)
+            'appsecret'=>$config['appsecret'], //填写高级调用功能的密钥(这里写的是测试号)
             //'tenpayID'=>'88888888', //财付通商户身份标识，支付权限专用，没有可不填
             //'tenpayKey'=>'', //财付通商户权限密钥Key，支付权限专用
             // 'tenpaySignKey'=>'' //商户签名密钥Key，支付权限专用
@@ -43,11 +46,28 @@ class IndexController extends Controller {
         self::$wechat=$wechat;
         self::$wechat->volid();
     }
+
+    /**
+     * 获取有后台管理设置的微信配置信息
+     * @return array       return array config
+     */
+    private function getConfigMessage(){
+
+        $filePhat="./Public/resource/config.json";
+        if(file_exists($filePhat)){
+            $fp = file_get_contents($filePhat);
+            $config=json_decode($fp,true);
+            return $config;
+        }
+
+    }
+
     /**
      * 微信接口url地址
      * 所谓的微信接口的入口地址,微信用户所有的信息提交都是有
      * 微信服务器发送到这个index动作里
      */
+
     public function index(){
         self::$wechat->getWechatPostXML();//接收微信发送过来的消息
         $type=self::$wechat->MsgTypeCheck();
