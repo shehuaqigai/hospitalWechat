@@ -55,7 +55,6 @@
                 url:ADMIN.global.ADMINPATH+"wechatSet/interfaceSet",
                 data:{dataformat:dataJson},
                 success:function(data){
-                    console.log(data);
                     $.Zebra_Dialog('<strong>设置成功!</strong>',{type:"confirmation",title:"确认"});
                 },
                 error:function(){}
