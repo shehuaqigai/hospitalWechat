@@ -22,8 +22,8 @@
                             mesgSet:'消息设置',
                             fllowPush:'关注回复',
                             massSendMesg:'群发消息',
-                            sceneQRcode:"带参数二维码"
-
+                            sceneQRcode:"带参数二维码",
+                            customMenu:'自定义菜单'
                         },
                          className:'wechatSet'
                      },
@@ -37,15 +37,6 @@
                         },
                        className:'wechatUserManage'
                      },
-                    {
-                        category:'自定义菜单',
-                        contentSet:{
-                            createMenu:'创建菜单',
-                            selectMenu:'菜单查询',
-                            deleteMenu:'删除菜单'
-                        },
-                        className:'customMenu'
-                    },
                     {
                         category:'商品管理',
                         contentSet:{
