@@ -2,7 +2,7 @@
 
 ADMIN["tpl"] = ADMIN["tpl"] || {};
 
-ADMIN["tpl"] ["customMenu"] = _.template('<div class="ws_customMenu"><p class="warming">注意:这里的自定义菜单操作不要修改,除非你知道自己在做什么,改动菜单后对应的事件回复处理和对应的链接页面都要重新开发,如果需要改变菜单请联系软件开发商!</p><div><div class="menuSwitch"><button class="customMenButton customMenu_create"><i></i>创建</button><button class="customMenButton customMenu_query"><i class="icon-search"></i>菜单查询</button><button class="customMenButton customMenu_editeMenu"><i class="icon-pencil2"></i>编辑菜单</button></div><div class="menuUIContainer"></div></div></div>');
+ADMIN["tpl"] ["customMenu"] = _.template('<div class="ws_customMenu"><p class="warming">注意:这里的自定义菜单操作不要修改,除非你知道自己在做什么,改动菜单后对应的事件回复处理和对应的链接页面都要重新开发,如果需要改变菜单请联系软件开发商!</p><div><div class="menuSwitch"><button class="customMenuButton clicked"><i class="icon-aid"></i>创建菜单</button><button class="customMenuButton"><i class="icon-pencil2"></i>编辑菜单</button></div><div class="menuUIContainer"><div class="customMenuCreate"><button>创建一级菜单</button><ul><li><input type="text" /><input type="radio" class="clickEvent" name="selectButtonType"/>click<input type="radio" class="linkEvent" name="selectButtonType"/>view<input type="radio" class="subMenu" name="selectButtonType"/>子菜单<input type="text" class="firstStairMenu"/></li></ul><button class="submitMenuCreate">创建</button></div><div class="customMenuEditeMenu"></div></div></div></div>');
 
 ADMIN["tpl"] ["fllowPush"] = _.template('');
 
