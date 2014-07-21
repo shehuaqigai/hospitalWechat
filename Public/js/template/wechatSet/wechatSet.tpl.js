@@ -2,7 +2,7 @@
 
 ADMIN["tpl"] = ADMIN["tpl"] || {};
 
-ADMIN["tpl"] ["customMenu"] = _.template('<div class="ws_customMenu"><p class="warming">注意:这里的自定义菜单操作不要修改,除非你知道自己在做什么,改动菜单后对应的事件回复处理和对应的链接页面都要重新开发,如果需要改变菜单请联系软件开发商!</p><div><div class="menuSwitch"><button><i></i></button><button><i></i></button><button><i></i></button></div><div class="menuUIContainer"></div></div></div>');
+ADMIN["tpl"] ["customMenu"] = _.template('<div class="ws_customMenu"><p class="warming">注意:这里的自定义菜单操作不要修改,除非你知道自己在做什么,改动菜单后对应的事件回复处理和对应的链接页面都要重新开发,如果需要改变菜单请联系软件开发商!</p><div><div class="menuSwitch"><button class="customMenButton customMenu_create"><i></i>创建</button><button class="customMenButton customMenu_query"><i class="icon-search"></i>菜单查询</button><button class="customMenButton customMenu_editeMenu"><i class="icon-pencil2"></i>编辑菜单</button></div><div class="menuUIContainer"></div></div></div>');
 
 ADMIN["tpl"] ["fllowPush"] = _.template('');
 
