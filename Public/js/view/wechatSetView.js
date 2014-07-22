@@ -3,7 +3,9 @@
     var wechatSet=Backbone.View.extend({
         el:"#wechatSet",
         events:{
-            "click .interfaceSet":"oninterfaceSet"//微信配置信息设置按钮事件
+            "click .interfaceSet":"oninterfaceSet",//微信配置信息设置按钮事件
+            "click .startCreateStairMenu":"onstartCreateStairMenu",
+            "click .customMenuButtonSwitch":"oncustomMenuButtonSwitch"
         },
         template:ADMIN.tpl,//模板
         button:null,//子按钮
@@ -79,6 +81,19 @@
 
         },
         ajaxAction:function(data){
+
+
+        },
+        onstartCreateStairMenu:function(e){
+            console.log(e.target);
+
+        },
+        oncustomMenuButtonSwitch:function(e){
+            var ele= e.target;
+
+
+
+            console.log(e);
 
 
         },
